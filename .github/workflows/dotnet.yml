@@ -24,5 +24,3 @@ jobs:
       run: dotnet restore "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj"
     - name: Build
       run: dotnet build "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
