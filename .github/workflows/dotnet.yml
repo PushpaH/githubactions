@@ -13,7 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-22.04, ubuntu-20.04, windows]
+        os: [ubuntu-22.04, ubuntu-20.04, windows-latest]
         version: [3.1.424, 5.0.100, 6.0.402]
 
     runs-on: ${{ matrix.os }}
@@ -28,3 +28,5 @@ jobs:
       run: dotnet restore "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj"
     - name: Build
       run: dotnet build "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" --no-restore
+    - name: publish  
+      run: dotnet publish "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" -c Release -o  release --nologo
