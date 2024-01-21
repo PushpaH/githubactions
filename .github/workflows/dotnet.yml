@@ -27,6 +27,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj"
     - name: Build
-      run: dotnet build "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" --no-restore
+      run: dotnet build "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" --configuration Release  --no-restore
     - name: publish  
-      run: dotnet publish "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" -c Release -o  release --nologo
+      run: dotnet publish  "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" -c Release --self-contained true
+      #dotnet publish "./actionsdemoapp/actionsdemoapp/actionsdemoapp.csproj" -c Release -o  release --nologo
+      
